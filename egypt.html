@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Responsive Images Lab</title>
+   <link rel="stylesheet" href="styles.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+   <header>
+      <h1>Mediterranian Vacations</h1>
+   </header>
+   <main>
+      <h2>Egypt</h2>
+      
+      <!-- First image: Added srcset attribute for different DPR screens -->
+      <!-- 1x for standard resolution, 2x for retina/high-DPI, 3x for ultra-high-DPI -->
+      <img src="images/egypt_600.jpg" 
+           srcset="images/egypt_600.jpg 1x, images/egypt_1200.jpg 2x, images/egypt_1800.jpg 3x" 
+           alt="Great Sphyinx and pyramid" class="stretch-image">
+
+      <p>Egpyt is a land of enduring beauty and rich culture.
+         Explore the capital city of <strong>Cairo</strong>,
+         the <strong>Great Pyramids of Giza</strong>, and the
+         iconic <strong>Great Sphinx</strong>!
+      </p>
+
+      <!-- Second image: Added srcset with actual image widths and sizes attribute -->
+      <!-- srcset provides 600w, 800w, and 1200w versions -->
+      <!-- sizes: 600px display at ≥700px viewport, 400px at ≥500px viewport, 200px default -->
+      <img src="images/luxor_600.jpg" 
+           srcset="images/luxor_600.jpg 600w, images/luxor_800.jpg 800w, images/luxor_1200.jpg 1200w"
+           sizes="(min-width: 700px) 600px, (min-width: 500px) 400px, 200px"
+           alt="Luxor Temple">
+
+      <p>
+         Packages include airfare, lodging, and several guided tours!
+      </p>
+      <ul>
+         <li>
+            <p>
+               <strong>Deluxe Package:</strong> 7 days in Cairo, Aswan, Luxor and Alexandria, 4 day Nile River cruise.
+            </p>
+         </li>
+         <li>
+            <p>
+               <strong>Super Package:</strong> 4 days in Cairo, 3 day Nile River cruise.
+            </p>
+         </li>
+         <li>
+            <p>
+               <strong>Express Package:</strong> 4 days in Cairo and upper Egypt on land.
+            </p>
+         </li>
+      </ul>
+
+      <!-- Third image: Added picture element for art direction -->
+      <!-- Shows hotel_wide.jpg when viewport ≥500px, hotel_narrow.jpg otherwise -->
+      <picture>
+         <!-- Source for viewports 500px and wider -->
+         <source media="(min-width: 500px)" srcset="images/hotel_wide.jpg">
+         <!-- Fallback image for smaller viewports and non-supporting browsers -->
+         <img src="images/hotel_narrow.jpg" alt="Hotel" class="stretch-image">
+      </picture>
+      
+   </main>
+   <footer>
+      <p>
+         <a href="mailto:travel@medvacations.com">travel@medvacations.com</a>
+      </p>
+      <p>
+         &copy; 2020 Mediterranian Vacations
+      </p>
+   </footer>
+</body>
+
+</html>
